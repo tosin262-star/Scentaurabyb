@@ -236,7 +236,22 @@
             });
         }
 
-        function addToCart(name, price) { cart.push({ name, price }); updateCartDisplay(); alert(name + " added!"); }
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartDisplay();
+            
+            // Clean UX micro-interaction
+            const btn = event.currentTarget;
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Added';
+            btn.style.color = "#25D366";
+
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.style.color = "";
+            }, 1000);
+        }
+
         function updateCartDisplay() {
             document.getElementById('cartCount').innerText = cart.length;
             const list = document.getElementById('cartItemsList');
