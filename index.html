@@ -16,28 +16,38 @@
         body { margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color); font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Cinzel', serif; letter-spacing: 2px; text-transform: uppercase; }
         .gold-text { background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 700; }
+        
         .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('bg.jpg'), radial-gradient(circle at center, #222 0%, #000 100%); background-size: cover; background-position: center; padding: 20px; position: relative; }
         .hero-content { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); padding: 40px; border-radius: 40px; border: 1px solid rgba(255, 255, 255, 0.1); max-width: 500px; width: 90%; box-shadow: 0 20px 50px rgba(0,0,0,0.5); opacity: 0; animation: smoothHero 1.5s forwards; }
         @keyframes smoothHero { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-        .logo-img { width: 180px; margin-bottom: 1.5rem; }
+        
         .top-nav { position: fixed; top: 0; right: 0; width: 100%; padding: 20px; display: flex; justify-content: flex-end; align-items: center; gap: 15px; z-index: 2000; pointer-events: none; }
         .top-nav > * { pointer-events: auto; }
         .header-search { background: rgba(0, 0, 0, 0.6); border: 1px solid #BF953F; border-radius: 30px; padding: 10px 20px; color: #fff; width: 140px; outline: none; }
         .profile-btn { background: rgba(0,0,0,0.6); color: #BF953F; border: 1px solid #BF953F; width: 42px; height: 42px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; margin-right: 20px; }
+        
         .ticker-wrap { width: 100%; overflow: hidden; background: var(--gold-gradient); padding: 10px 0; white-space: nowrap; z-index: 50; }
         .ticker { display: inline-block; animation: marquee 20s linear infinite; }
         .ticker-item { display: inline-block; padding: 0 30px; font-size: 0.9rem; color: #000; font-weight: 800; }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        
         .collection { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         .product-card { background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center; border-radius: 25px; transition: 0.3s; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
         .product-img { width: 100%; height: 350px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; }
-        .product-price { color: #BF953F; font-size: 1.3rem; margin-bottom: 20px; font-weight: 600; }
-        .icon-btn { padding: 14px 25px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; border-radius: 30px; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; transition: 0.3s; }
+        
+        /* CONTACT SECTION */
+        .insta-cta-section { text-align: center; margin-top: 80px; padding: 40px; background: rgba(255,255,255,0.02); border-radius: 30px; border: 1px solid rgba(191, 149, 63, 0.1); }
+        .insta-btn { background: transparent; border: 2px solid #BF953F; color: #BF953F; padding: 15px 30px; text-decoration: none; display: inline-block; margin: 10px; transition: 0.3s; font-weight: 600; border-radius: 50px; }
+        .insta-btn:hover { background: #BF953F; color: #000; }
+
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2100; justify-content: center; align-items: center; backdrop-filter: blur(10px); }
         .modal-content { background: #111; padding: 30px; border-radius: 20px; width: 85%; max-width: 320px; border: 1px solid #BF953F; text-align: center; position: relative; }
-        .close-modal { position: absolute; top: -15px; right: -15px; background: var(--gold-gradient); color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: bold; font-size: 1.2rem; }
-        .cta-btn { margin-top: 30px; padding: 18px 50px; background: var(--gold-gradient); border: none; color: #000; font-weight: 700; border-radius: 50px; cursor: pointer; text-decoration: none; display: inline-block; }
+        
+        /* THE FIXED GOLD CIRCLE X */
+        .close-modal { position: absolute; top: -15px; right: -15px; background: var(--gold-gradient); color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: bold; font-size: 1.2rem; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        
+        .icon-btn { padding: 14px 25px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; border-radius: 30px; cursor: pointer; width: 100%; transition: 0.3s; font-family: inherit; }
         .cart-float-btn { position: fixed; bottom: 30px; right: 30px; background: var(--gold-gradient); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #000; z-index: 1000; cursor: pointer; }
         .cart-count { position: absolute; top: -5px; right: -5px; background: red; color: white; font-size: 0.8rem; width: 24px; height: 24px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; }
         footer { text-align: center; padding: 60px 40px; border-top: 1px solid #222; color: #888; font-size: 0.9rem; }
@@ -48,31 +58,44 @@
         <input type="text" id="searchInput" class="header-search" placeholder="Search..." onkeyup="filterProducts()">
         <div class="profile-btn" onclick="openProfile()"><i class="fas fa-user"></i></div>
     </div>
+
     <section class="hero">
         <div class="hero-content">
-            <img src="brand.jpeg" class="logo-img">
+            <img src="brand.jpeg" style="width:180px; margin-bottom:1.5rem;">
             <p id="welcome-msg">"Your Aura. <span class="gold-text">Your Fragrance.</span>"</p>
-            <a href="#collection" class="cta-btn">View Collection</a>
+            <a href="#collection" style="margin-top: 30px; padding: 18px 50px; background: var(--gold-gradient); border: none; color: #000; font-weight: 700; border-radius: 50px; text-decoration: none; display: inline-block;">View Collection</a>
         </div>
     </section>
-    <div class="ticker-wrap"><div class="ticker"><div class="ticker-item">SCENTAURA BY B</div><div class="ticker-item">NATIONWIDE DELIVERY</div><div class="ticker-item">LUXURY FRAGRANCES</div><div class="ticker-item">SCENTAURA BY B</div></div></div>
+
+    <div class="ticker-wrap"><div class="ticker"><div class="ticker-item">SCENTAURA BY B</div><div class="ticker-item">NATIONWIDE DELIVERY</div><div class="ticker-item">LUXURY FRAGRANCES</div><div class="ticker-item">AUTHENTIC SCENTS</div></div></div>
+
     <section id="collection" class="collection">
         <div class="product-grid" id="productGrid">
-            <div class="product-card"><img src="qimmah.jpeg" class="product-img"><h3>Qimmah</h3><div class="product-price">₦25,000</div><button onclick="addToCart('Qimmah', 25000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="sugarpink.jpeg" class="product-img"><h3>Sugar Pink</h3><div class="product-price">₦21,000</div><button onclick="addToCart('Sugar Pink', 21000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="nowcombo.jpeg" class="product-img"><h3>Now & Lamsat</h3><div class="product-price">₦45,000</div><button onclick="addToCart('Now & Lamsat Combo', 45000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="dirgham.jpeg" class="product-img"><h3>Al Dirgham</h3><div class="product-price">₦30,000</div><button onclick="addToCart('Al Dirgham', 30000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="mousuf.jpeg" class="product-img"><h3>Mousuf Brown</h3><div class="product-price">₦20,000</div><button onclick="addToCart('Mousuf Brown', 20000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lamsat.jpeg" class="product-img"><h3>Lamsat Harir</h3><div class="product-price">₦18,000</div><button onclick="addToCart('Lamsat Harir', 18000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lamsatgold.jpeg" class="product-img"><h3>Lamsat Gold</h3><div class="product-price">₦18,000</div><button onclick="addToCart('Lamsat Gold', 18000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="confession.jpeg" class="product-img"><h3>Her Confession</h3><div class="product-price">₦52,000</div><button onclick="addToCart('Her Confession', 52000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="sensuous.jpeg" class="product-img"><h3>Sensuous Night</h3><div class="product-price">₦30,000</div><button onclick="addToCart('Sensuous Night', 30000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="qimmah.jpeg" class="product-img"><h3>Qimmah</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦25,000</div><button onclick="addToCart('Qimmah', 25000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="sugarpink.jpeg" class="product-img"><h3>Sugar Pink</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦21,000</div><button onclick="addToCart('Sugar Pink', 21000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="nowcombo.jpeg" class="product-img"><h3>Now & Lamsat</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦45,000</div><button onclick="addToCart('Now & Lamsat Combo', 45000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="dirgham.jpeg" class="product-img"><h3>Al Dirgham</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦30,000</div><button onclick="addToCart('Al Dirgham', 30000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="mousuf.jpeg" class="product-img"><h3>Mousuf Brown</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦20,000</div><button onclick="addToCart('Mousuf Brown', 20000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="lamsat.jpeg" class="product-img"><h3>Lamsat Harir</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦18,000</div><button onclick="addToCart('Lamsat Harir', 18000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="lamsatgold.jpeg" class="product-img"><h3>Lamsat Gold</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦18,000</div><button onclick="addToCart('Lamsat Gold', 18000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="confession.jpeg" class="product-img"><h3>Her Confession</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦52,000</div><button onclick="addToCart('Her Confession', 52000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="sensuous.jpeg" class="product-img"><h3>Sensuous Night</h3><div style="color:#BF953F; font-weight:600; margin-bottom:20px;">₦30,000</div><button onclick="addToCart('Sensuous Night', 30000)" class="icon-btn">Add to Cart</button></div>
+        </div>
+
+        <div class="insta-cta-section">
+            <h3 style="color: #fff; margin-bottom: 10px;">Want to see more?</h3>
+            <p style="color: #aaa; margin-bottom: 20px;">Explore our full exclusive catalog on Instagram or chat with us.</p>
+            <a href="https://instagram.com/scentaura_by_b" class="insta-btn"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://wa.me/2347070717476" class="insta-btn" style="border-color: #25D366; color: #25D366;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
         </div>
     </section>
+
     <div class="cart-float-btn" onclick="toggleCart()"><i class="fas fa-shopping-bag"></i><div class="cart-count" id="cartCount">0</div></div>
-    <div class="modal-overlay" id="cartModal"><div class="modal-content"><span class="close-modal" onclick="toggleCart()">&times;</span><h2>Your Cart</h2><div id="cartItemsList"></div><div id="cartTotal"></div><button onclick="checkoutWhatsApp()" style="background:#25D366; color:white; padding:15px; width:100%; border-radius:30px; margin-top:20px; border:none; font-weight:bold;">WhatsApp Checkout</button></div></div>
-    <div class="modal-overlay" id="profileModal"><div class="modal-content"><span class="close-modal" onclick="openProfile()">&times;</span><h2>Profile</h2><input type="text" id="usernameInput" placeholder="Your Name" style="width:80%; padding:10px; margin:20px 0; background:#000; color:#fff; border:1px solid #333;"><button onclick="saveUserProfile()" class="cta-btn" style="padding:10px 30px;">Save</button></div></div>
-    <footer><div style="color:#BF953F; margin-bottom:10px;"><i class="fas fa-map-marker-alt"></i> Lagos (Nationwide delivery)</div>&copy; 2026 Scentaura by B.</footer>
+    <div class="modal-overlay" id="cartModal"><div class="modal-content"><span class="close-modal" onclick="toggleCart()">&times;</span><h2>Your Cart</h2><div id="cartItemsList" style="margin:20px 0;"></div><div id="cartTotal" style="font-weight:bold;"></div><button onclick="checkoutWhatsApp()" style="background:#25D366; color:white; padding:15px; width:100%; border-radius:30px; margin-top:20px; border:none; font-weight:bold;">Order on WhatsApp</button></div></div>
+    <div class="modal-overlay" id="profileModal"><div class="modal-content"><span class="close-modal" onclick="openProfile()">&times;</span><h2>Profile</h2><input type="text" id="usernameInput" placeholder="Your Name" style="width:80%; padding:12px; margin:20px 0; background:#000; color:#fff; border:1px solid #333; border-radius:10px;"><br><button onclick="saveUserProfile()" style="padding:10px 40px; background:var(--gold-gradient); border:none; border-radius:50px; font-weight:bold;">Save</button></div></div>
+
+    <footer><div style="color:#BF953F; margin-bottom:10px;"><i class="fas fa-map-marker-alt"></i> Lagos (Nationwide delivery)</div>&copy; 2026 Scentaura by B. All Rights Reserved.</footer>
+
     <script>
         let cart = [];
         const PHONE_NUMBER = "2347070717476";
@@ -89,13 +112,21 @@
             document.getElementById('cartCount').innerText = cart.length;
             const list = document.getElementById('cartItemsList');
             let total = 0;
-            list.innerHTML = cart.map(item => { total += item.price; return `<div style="display:flex;justify-content:space-between;"><span>${item.name}</span><span>₦${item.price.toLocaleString()}</span></div>` }).join('');
+            list.innerHTML = cart.length ? cart.map(item => { total += item.price; return `<div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span>${item.name}</span><span>₦${item.price.toLocaleString()}</span></div>` }).join('') : "Your cart is empty.";
             document.getElementById('cartTotal').innerText = "Total: ₦" + total.toLocaleString();
         }
         function toggleCart() { const m = document.getElementById('cartModal'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; }
         function openProfile() { const p = document.getElementById('profileModal'); p.style.display = p.style.display === 'flex' ? 'none' : 'flex'; }
         function saveUserProfile() { const n = document.getElementById('usernameInput').value; if(n) { localStorage.setItem('scentauraUser', n); location.reload(); } }
-        function checkoutWhatsApp() { if(!cart.length) return; let m = "Order:%0A" + cart.map((i, idx) => `${idx+1}. ${i.name}`).join('%0A'); window.open(`https://wa.me/${PHONE_NUMBER}?text=${m}`); }
+        function checkoutWhatsApp() { if(!cart.length) return; let m = `Hi, I want to order:%0A` + cart.map((i, idx) => `${idx+1}. ${i.name}`).join('%0A'); window.open(`https://wa.me/${PHONE_NUMBER}?text=${m}`); }
+        function filterProducts() {
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            document.querySelectorAll('.product-card').forEach(card => {
+                let name = card.querySelector('h3').innerText.toLowerCase();
+                card.style.display = name.includes(input) ? "flex" : "none";
+            });
+        }
+        window.onload = () => { let n = localStorage.getItem('scentauraUser'); if(n) document.getElementById('welcome-msg').innerHTML = `Welcome back, <span class="gold-text">${n}</span>`; };
     </script>
 </body>
 </html>
