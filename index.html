@@ -173,7 +173,16 @@
 
         function toggleCart() { const m = document.getElementById('cartModal'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; }
         function openProfile() { const p = document.getElementById('profileModal'); p.style.display = p.style.display === 'flex' ? 'none' : 'flex'; }
-        function saveUserProfile() { const n = document.getElementById('usernameInput').value; if(n) { localStorage.setItem('scentauraUser', n); location.reload(); } }
+        
+        // --- FIXED PROFILE LOGIC ---
+        function saveUserProfile() { 
+            const n = document.getElementById('usernameInput').value; 
+            if(n) { 
+                localStorage.setItem('scentauraUser', n); 
+                // We reload to trigger the window.onload greeting
+                location.reload(); 
+            } 
+        }
 
         function checkoutWhatsApp() { 
             let items = [], total = 0;
@@ -182,7 +191,14 @@
             window.open(`https://wa.me/${PHONE_NUMBER}?text=Hi, I want to order:%0A${items.join('%0A')}%0A%0A*Total: ₦${total.toLocaleString()}*`); 
         }
 
-        window.onload = () => { let n = localStorage.getItem('scentauraUser'); if(n) document.getElementById('welcome-msg').innerHTML = `Welcome back, <span class="gold-text">${n}</span>`; };
+        window.onload = () => { 
+            let n = localStorage.getItem('scentauraUser'); 
+            if(n) {
+                const msg = document.getElementById('welcome-msg');
+                if(msg) msg.innerHTML = `Welcome back, <span class="gold-text">${n}</span>`; 
+            }
+        };
+        // ---------------------------
 
         function filterProducts() {
             let input = document.getElementById('searchInput').value.toLowerCase();
@@ -194,3 +210,4 @@
     </script>
 </body>
 </html>
+
