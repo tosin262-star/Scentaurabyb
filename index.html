@@ -37,18 +37,19 @@
         .collection { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         
-        .product-card { 
+        .product-card, .contact-card { 
             background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center; border-radius: 25px; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;
             transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease;
         }
         .product-card:hover { transform: translateY(-10px); border-color: #BF953F; }
 
-        /* LUXURY TIER TAG */
-        .luxury-tag {
-            position: absolute; top: 15px; right: 15px; background: var(--gold-gradient); color: #000;
-            padding: 5px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
-            letter-spacing: 1px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 10;
+        .luxury-badge {
+            position: absolute; top: 15px; right: 15px; 
+            background: rgba(191, 149, 63, 0.2); backdrop-filter: blur(5px);
+            border: 1px solid #BF953F; color: #BF953F;
+            padding: 6px 14px; border-radius: 50px; font-size: 0.7rem; font-weight: 800; 
+            text-transform: uppercase; letter-spacing: 1.5px; z-index: 10;
         }
 
         .product-img { width: 100%; height: 350px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; }
@@ -90,9 +91,8 @@
 
     <section id="collection" class="collection">
         <div class="product-grid" id="productGrid">
-            <div class="product-card"><div class="luxury-tag">Luxury Tier</div><img src="supremacy.jpeg" class="product-img"><h3 class="product-name">Supremacy</h3><div class="product-sub">by Afnan</div><div class="product-price">₦90,000</div><button onclick="addToCart('Supremacy', 90000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><div class="luxury-tag">Luxury Tier</div><img src="9pmnight.jpeg" class="product-img"><h3 class="product-name">9pm Night Out</h3><div class="product-sub">by Afnan</div><div class="product-price">₦65,000</div><button onclick="addToCart('9pm Night Out', 65000)" class="icon-btn">Add to Cart</button></div>
-            
+            <div class="product-card"><div class="luxury-badge">Luxury Tier</div><img src="supremacy.jpeg" class="product-img"><h3 class="product-name">Supremacy</h3><div class="product-sub">by Afnan</div><div class="product-price">₦90,000</div><button onclick="addToCart('Supremacy', 90000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><div class="luxury-badge">Luxury Tier</div><img src="9pmnight.jpeg" class="product-img"><h3 class="product-name">9pm Night Out</h3><div class="product-sub">by Afnan</div><div class="product-price">₦65,000</div><button onclick="addToCart('9pm Night Out', 65000)" class="icon-btn">Add to Cart</button></div>
             <div class="product-card"><img src="treasure.jpeg" class="product-img"><h3 class="product-name">Treasure Oak</h3><div class="product-sub">by Lattafa Pride</div><div class="product-price">₦60,000</div><button onclick="addToCart('Treasure Oak', 60000)" class="icon-btn">Add to Cart</button></div>
             <div class="product-card"><img src="9pmelixir.jpeg" class="product-img"><h3 class="product-name">9pm Elixir</h3><div class="product-sub">by Afnan</div><div class="product-price">₦60,000</div><button onclick="addToCart('9pm Elixir', 60000)" class="icon-btn">Add to Cart</button></div>
             <div class="product-card"><img src="9pmrebel.jpeg" class="product-img"><h3 class="product-name">9pm Rebel</h3><div class="product-sub">by Afnan</div><div class="product-price">₦60,000</div><button onclick="addToCart('9pm Rebel', 60000)" class="icon-btn">Add to Cart</button></div>
@@ -118,8 +118,8 @@
             <div class="product-card"><img src="veyes.jpeg" class="product-img"><h3 class="product-name">Veyes Gift Set</h3><div class="product-sub">Miniature Collection</div><div class="product-price">₦15,000</div><button onclick="addToCart('Veyes Gift Set', 15000)" class="icon-btn">Add to Cart</button></div>
 
             <div class="contact-card">
-                <h3>Catalog Support</h3>
-                <p>Chat with us for bespoke scents.</p>
+                <h3>Want to see more?</h3>
+                <p>Explore our full exclusive catalog.</p>
                 <a href="https://instagram.com/scentaura_by_b" style="border: 1px solid #BF953F; color: #BF953F; padding: 12px 25px; border-radius: 30px; text-decoration: none; display: inline-block; margin-bottom: 20px; width: 80%;">Instagram</a>
                 <a href="https://wa.me/2347070717476" style="border: 1px solid #25D366; color: #25D366; padding: 12px 25px; border-radius: 30px; text-decoration: none; display: inline-block; width: 80%;">WhatsApp</a>
             </div>
