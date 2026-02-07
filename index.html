@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Scentaura by B | Luxury Fragrances</title>
     <meta property="og:title" content="Scentaura by B | Luxury Fragrances">
-<meta property="og:description" content="Discover your signature scent.">
-<meta property="og:image" content="https://i.ibb.co/vz6W7tY/scentaura-preview.jpg">
-<meta property="og:type" content="website">
+    <meta property="og:description" content="Discover your signature scent.">
+    <meta property="og:image" content="https://i.ibb.co/vz6W7tY/scentaura-preview.jpg">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -30,7 +30,7 @@
         .hero-content { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); padding: 40px; border-radius: 40px; border: 1px solid rgba(255, 255, 255, 0.1); width: 88%; max-width: 500px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); opacity: 0; animation: smoothHero 1.5s forwards; }
         @keyframes smoothHero { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
         .logo-img { width: 180px; margin-bottom: 1.5rem; }
-        .hero p { font-family: 'Montserrat', sans-serif;.  font-size: 1.2rem; letter-spacing: 4px; margin-top: 8px; color: #e0e0e0; font-weight: 700; text-transform: uppercase; }
+        .hero p { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; letter-spacing: 4px; margin-top: 8px; color: #e0e0e0; font-weight: 700; text-transform: uppercase; }
         .cta-btn { margin-top: 30px; padding: 18px 50px; background: var(--gold-gradient); border: none; color: #000; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.1rem; border-radius: 50px; text-decoration: none; display: inline-block; }
 
         .ticker-wrap { width: 100%; overflow: hidden; background: var(--gold-gradient); padding: 12px 0; white-space: nowrap; z-index: 50; }
@@ -61,6 +61,7 @@
         .product-sub { color: #888; font-size: 0.9rem; margin-top: 4px; margin-bottom: 12px; }
         .product-price { color: #BF953F; font-size: 1.3rem; margin-bottom: 20px; font-weight: 600; }
         .icon-btn { padding: 16px 25px; border: 1px solid rgba(255,255,255,0.2); background: transparent; color: #fff; border-radius: 40px; cursor: pointer; width: 100%; transition: 0.3s; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; }
+        .icon-btn.added { background: var(--gold-gradient) !important; color: #000 !important; border-color: transparent; }
 
         .cart-float-btn { position: fixed; bottom: 30px; right: 30px; background: var(--gold-gradient); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #000; z-index: 1000; cursor: pointer; }
         .cart-count { position: absolute; top: -5px; right: -5px; background: red; color: white; font-size: 0.8rem; width: 22px; height: 22px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; }
@@ -95,31 +96,31 @@
 
     <section id="collection" class="collection">
         <div class="product-grid" id="productGrid">
-            <div class="product-card"><div class="luxury-badge">Luxury Scent</div><img src="supremacy.jpeg" class="product-img"><h3 class="product-name">Supremacy</h3><div class="product-sub">by Afnan</div><div class="product-price">₦90,000</div><button onclick="addToCart('Supremacy', 90000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><div class="luxury-badge">Luxury Scent</div><img src="9pmnight.jpeg" class="product-img"><h3 class="product-name">9pm Night Out</h3><div class="product-sub">by Afnan</div><div class="product-price">₦65,000</div><button onclick="addToCart('9pm Night Out', 65000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="treasure.jpeg" class="product-img"><h3 class="product-name">Treasure Oak</h3><div class="product-sub">Woody Spicy</div><div class="product-price">₦60,000</div><button onclick="addToCart('Treasure Oak', 60000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="9pmelixir.jpeg" class="product-img"><h3 class="product-name">9pm Elixir</h3><div class="product-sub">by Afnan</div><div class="product-price">₦60,000</div><button onclick="addToCart('9pm Elixir', 60000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="9pmrebel.jpeg" class="product-img"><h3 class="product-name">9pm Rebel</h3><div class="product-sub">by Afnan</div><div class="product-price">₦60,000</div><button onclick="addToCart('9pm Rebel', 60000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="clubdenuit.jpeg" class="product-img"><h3 class="product-name">Club de Nuit</h3><div class="product-sub">by Armaf</div><div class="product-price">₦55,000</div><button onclick="addToCart('Club de Nuit', 55000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="confession.jpeg" class="product-img"><h3 class="product-name">Her Confession</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦52,000</div><button onclick="addToCart('Her Confession', 52000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="9pmblack.jpeg" class="product-img"><h3 class="product-name">9pm Black</h3><div class="product-sub">by Afnan</div><div class="product-price">₦50,000</div><button onclick="addToCart('9pm Black', 50000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="giftset.jpeg" class="product-img"><h3 class="product-name">Lattafa Pride Set</h3><div class="product-sub">by Lattafa Pride</div><div class="product-price">₦50,000</div><button onclick="addToCart('Lattafa Gift Set', 50000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="nowcombo.jpeg" class="product-img"><h3 class="product-name">Now & Lamsat</h3><div class="product-sub">Combo Scent</div><div class="product-price">₦45,000</div><button onclick="addToCart('Now & Lamsat Combo', 45000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="vanilla.jpeg" class="product-img"><h3 class="product-name">Vanilla Voyage</h3><div class="product-sub">by Maison Asrar</div><div class="product-price">₦45,000</div><button onclick="addToCart('Vanilla Voyage', 45000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="badee.jpeg" class="product-img"><h3 class="product-name">Badee Al Oud</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦35,000</div><button onclick="addToCart('Badee Al Oud', 35000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="dirgham.jpeg" class="product-img"><h3 class="product-name">Al Dirgham</h3><div class="product-sub">Luxury Collection</div><div class="product-price">₦30,000</div><button onclick="addToCart('Al Dirgham', 30000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="fakhar.jpeg" class="product-img"><h3 class="product-name">Fakhar Plantin</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦30,000</div><button onclick="addToCart('Fakhar Plantin', 30000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="sensuous.jpeg" class="product-img"><h3 class="product-name">Sensuous Night</h3><div class="product-sub">by Khadlaj (100ml)</div><div class="product-price">₦30,000</div><button onclick="addToCart('Sensuous Night', 30000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="hayatti.jpeg" class="product-img"><h3 class="product-name">Hayatti Series</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦28,000</div><button onclick="addToCart('Hayatti Series', 28000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="qimmah.jpeg" class="product-img"><h3 class="product-name">Qimmah</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart('Qimmah', 25000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="ameeraloud.jpeg" class="product-img"><h3 class="product-name">Ameer Al Oud</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart('Ameer Al Oud', 25000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lail.jpeg" class="product-img"><h3 class="product-name">Lail Maleki</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart('Lail Maleki', 25000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="sugarpink.jpeg" class="product-img"><h3 class="product-name">Sugar Pink</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦21,000</div><button onclick="addToCart('Sugar Pink', 21000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="mousuf.jpeg" class="product-img"><h3 class="product-name">Mousuf Brown</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦20,000</div><button onclick="addToCart('Mousuf Brown', 20000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lamsat.jpeg" class="product-img"><h3 class="product-name">Lamsat Harir</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart('Lamsat Harir', 18000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lamsatgold.jpeg" class="product-img"><h3 class="product-name">Lamsat Gold</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart('Lamsat Gold', 18000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="oudlayl.jpeg" class="product-img"><h3 class="product-name">Oud Al Layl</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart('Oud Al Layl', 18000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="veyes.jpeg" class="product-img"><h3 class="product-name">Veyes Gift Set</h3><div class="product-sub">Miniature Collection</div><div class="product-price">₦15,000</div><button onclick="addToCart('Veyes Gift Set', 15000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><div class="luxury-badge">Luxury Scent</div><img src="supremacy.jpeg" class="product-img"><h3 class="product-name">Supremacy</h3><div class="product-sub">by Afnan</div><div class="product-price">₦90,000</div><button onclick="addToCart(event, 'Supremacy', 90000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><div class="luxury-badge">Luxury Scent</div><img src="9pmnight.jpeg" class="product-img"><h3 class="product-name">9pm Night Out</h3><div class="product-sub">by Afnan</div><div class="product-price">₦65,000</div><button onclick="addToCart(event, '9pm Night Out', 65000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="treasure.jpeg" class="product-img"><h3 class="product-name">Treasure Oak</h3><div class="product-sub">Woody Spicy</div><div class="product-price">₦60,000</div><button onclick="addToCart(event, 'Treasure Oak', 60000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="9pmelixir.jpeg" class="product-img"><h3 class="product-name">9pm Elixir</h3><div class="product-sub">by Afnan</div><div class="product-price">₦60,000</div><button onclick="addToCart(event, '9pm Elixir', 60000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="9pmrebel.jpeg" class="product-img"><h3 class="product-name">9pm Rebel</h3><div class="product-sub">by Afnan</div><div class="product-price">₦60,000</div><button onclick="addToCart(event, '9pm Rebel', 60000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="clubdenuit.jpeg" class="product-img"><h3 class="product-name">Club de Nuit</h3><div class="product-sub">by Armaf</div><div class="product-price">₦55,000</div><button onclick="addToCart(event, 'Club de Nuit', 55000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="confession.jpeg" class="product-img"><h3 class="product-name">Her Confession</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦52,000</div><button onclick="addToCart(event, 'Her Confession', 52000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="9pmblack.jpeg" class="product-img"><h3 class="product-name">9pm Black</h3><div class="product-sub">by Afnan</div><div class="product-price">₦50,000</div><button onclick="addToCart(event, '9pm Black', 50000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="giftset.jpeg" class="product-img"><h3 class="product-name">Lattafa Pride Set</h3><div class="product-sub">by Lattafa Pride</div><div class="product-price">₦50,000</div><button onclick="addToCart(event, 'Lattafa Gift Set', 50000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="nowcombo.jpeg" class="product-img"><h3 class="product-name">Now & Lamsat</h3><div class="product-sub">Combo Scent</div><div class="product-price">₦45,000</div><button onclick="addToCart(event, 'Now & Lamsat Combo', 45000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="vanilla.jpeg" class="product-img"><h3 class="product-name">Vanilla Voyage</h3><div class="product-sub">by Maison Asrar</div><div class="product-price">₦45,000</div><button onclick="addToCart(event, 'Vanilla Voyage', 45000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="badee.jpeg" class="product-img"><h3 class="product-name">Badee Al Oud</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦35,000</div><button onclick="addToCart(event, 'Badee Al Oud', 35000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="dirgham.jpeg" class="product-img"><h3 class="product-name">Al Dirgham</h3><div class="product-sub">Luxury Collection</div><div class="product-price">₦30,000</div><button onclick="addToCart(event, 'Al Dirgham', 30000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="fakhar.jpeg" class="product-img"><h3 class="product-name">Fakhar Plantin</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦30,000</div><button onclick="addToCart(event, 'Fakhar Plantin', 30000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="sensuous.jpeg" class="product-img"><h3 class="product-name">Sensuous Night</h3><div class="product-sub">by Khadlaj (100ml)</div><div class="product-price">₦30,000</div><button onclick="addToCart(event, 'Sensuous Night', 30000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="hayatti.jpeg" class="product-img"><h3 class="product-name">Hayatti Series</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦28,000</div><button onclick="addToCart(event, 'Hayatti Series', 28000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="qimmah.jpeg" class="product-img"><h3 class="product-name">Qimmah</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart(event, 'Qimmah', 25000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="ameeraloud.jpeg" class="product-img"><h3 class="product-name">Ameer Al Oud</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart(event, 'Ameer Al Oud', 25000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="lail.jpeg" class="product-img"><h3 class="product-name">Lail Maleki</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart(event, 'Lail Maleki', 25000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="sugarpink.jpeg" class="product-img"><h3 class="product-name">Sugar Pink</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦21,000</div><button onclick="addToCart(event, 'Sugar Pink', 21000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="mousuf.jpeg" class="product-img"><h3 class="product-name">Mousuf Brown</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦20,000</div><button onclick="addToCart(event, 'Mousuf Brown', 20000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="lamsat.jpeg" class="product-img"><h3 class="product-name">Lamsat Harir</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Lamsat Harir', 18000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="lamsatgold.jpeg" class="product-img"><h3 class="product-name">Lamsat Gold</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Lamsat Gold', 18000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="oudlayl.jpeg" class="product-img"><h3 class="product-name">Oud Al Layl</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Oud Al Layl', 18000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="veyes.jpeg" class="product-img"><h3 class="product-name">Veyes Gift Set</h3><div class="product-sub">Miniature Collection</div><div class="product-price">₦15,000</div><button onclick="addToCart(event, 'Veyes Gift Set', 15000)" class="icon-btn">Add to Cart</button></div>
 
             <div class="contact-card">
                 <h3>Want to see more?</h3>
@@ -142,8 +143,22 @@
     <script>
         let cart = {};
         const PHONE_NUMBER = "2347070717476";
-        function addToCart(name, price) { if (cart[name]) { cart[name].qty += 1; } else { cart[name] = { price: price, qty: 1 }; } updateCartDisplay(); }
+
+        function addToCart(event, name, price) {
+            const btn = event.currentTarget;
+            if (cart[name]) { cart[name].qty += 1; } else { cart[name] = { price: price, qty: 1 }; }
+            updateCartDisplay();
+            btn.classList.add('added');
+            const originalText = btn.innerText;
+            btn.innerText = "Added! ✓";
+            setTimeout(() => {
+                btn.classList.remove('added');
+                btn.innerText = "Add to Cart";
+            }, 2000);
+        }
+
         function changeQty(name, delta) { if (cart[name]) { cart[name].qty += delta; if (cart[name].qty <= 0) delete cart[name]; updateCartDisplay(); } }
+
         function updateCartDisplay() {
             const list = document.getElementById('cartItemsList'), totalText = document.getElementById('cartTotalText');
             let total = 0, count = 0, html = "";
@@ -155,16 +170,20 @@
             totalText.innerText = `₦${total.toLocaleString()}`;
             document.getElementById('cartCount').innerText = count;
         }
+
         function toggleCart() { const m = document.getElementById('cartModal'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; }
         function openProfile() { const p = document.getElementById('profileModal'); p.style.display = p.style.display === 'flex' ? 'none' : 'flex'; }
         function saveUserProfile() { const n = document.getElementById('usernameInput').value; if(n) { localStorage.setItem('scentauraUser', n); location.reload(); } }
+
         function checkoutWhatsApp() { 
             let items = [], total = 0;
             for(let name in cart) { items.push(`${cart[name].qty}x ${name}`); total += cart[name].price * cart[name].qty; }
             if(!items.length) return; 
             window.open(`https://wa.me/${PHONE_NUMBER}?text=Hi, I want to order:%0A${items.join('%0A')}%0A%0A*Total: ₦${total.toLocaleString()}*`); 
         }
+
         window.onload = () => { let n = localStorage.getItem('scentauraUser'); if(n) document.getElementById('welcome-msg').innerHTML = `Welcome back, <span class="gold-text">${n}</span>`; };
+
         function filterProducts() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             document.querySelectorAll('.product-card').forEach(card => {
@@ -172,26 +191,6 @@
                 card.style.display = name.includes(input) ? "flex" : "none";
             });
         }
-    } // This closes the previous filterProducts function
-
-function addToCart(event, name, price) {
-    const btn = event.currentTarget;
-    btn.classList.add('added');
-    const originalText = btn.innerText;
-    btn.innerText = "Added! ✓";
-
-    if (typeof cart !== 'undefined') {
-        cart.push({ name, price });
-        updateCartCount();
-    }
-
-    setTimeout(() => {
-        btn.classList.remove('added');
-        btn.innerText = originalText;
-    }, 2000);
-}
-</script>
-
+    </script>
 </body>
 </html>
-
