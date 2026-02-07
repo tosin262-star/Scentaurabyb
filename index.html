@@ -174,21 +174,16 @@
         function toggleCart() { const m = document.getElementById('cartModal'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; }
         function openProfile() { const p = document.getElementById('profileModal'); p.style.display = p.style.display === 'flex' ? 'none' : 'flex'; }
         
-        // --- FIXED PROFILE LOGIC ---
+        // --- SURGICAL PROFILE FIX ---
         function saveUserProfile() { 
             const n = document.getElementById('usernameInput').value; 
+            const saveBtn = document.querySelector('#profileModal button');
             if(n) { 
                 localStorage.setItem('scentauraUser', n); 
-                // We reload to trigger the window.onload greeting
-                location.reload(); 
+                saveBtn.innerText = "Saved! ✓";
+                saveBtn.style.background = "#25D366";
+                setTimeout(() => { location.reload(); }, 800);
             } 
-        }
-
-        function checkoutWhatsApp() { 
-            let items = [], total = 0;
-            for(let name in cart) { items.push(`${cart[name].qty}x ${name}`); total += cart[name].price * cart[name].qty; }
-            if(!items.length) return; 
-            window.open(`https://wa.me/${PHONE_NUMBER}?text=Hi, I want to order:%0A${items.join('%0A')}%0A%0A*Total: ₦${total.toLocaleString()}*`); 
         }
 
         window.onload = () => { 
@@ -199,6 +194,13 @@
             }
         };
         // ---------------------------
+
+        function checkoutWhatsApp() { 
+            let items = [], total = 0;
+            for(let name in cart) { items.push(`${cart[name].qty}x ${name}`); total += cart[name].price * cart[name].qty; }
+            if(!items.length) return; 
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=Hi, I want to order:%0A${items.join('%0A')}%0A%0A*Total: ₦${total.toLocaleString()}*`); 
+        }
 
         function filterProducts() {
             let input = document.getElementById('searchInput').value.toLowerCase();
