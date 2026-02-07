@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Scentaura by B | Luxury Fragrances</title>
+    <meta property="og:title" content="Scentaura by B | Luxury Fragrances">
+<meta property="og:description" content="Discover your signature scent.">
+<meta property="og:image" content="https://i.ibb.co/vz6W7tY/scentaura-preview.jpg">
+<meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -168,7 +172,26 @@
                 card.style.display = name.includes(input) ? "flex" : "none";
             });
         }
-    </script>
+    } // This closes the previous filterProducts function
+
+function addToCart(event, name, price) {
+    const btn = event.currentTarget;
+    btn.classList.add('added');
+    const originalText = btn.innerText;
+    btn.innerText = "Added! ✓";
+
+    if (typeof cart !== 'undefined') {
+        cart.push({ name, price });
+        updateCartCount();
+    }
+
+    setTimeout(() => {
+        btn.classList.remove('added');
+        btn.innerText = originalText;
+    }, 2000);
+}
+</script>
+
 </body>
 </html>
 
