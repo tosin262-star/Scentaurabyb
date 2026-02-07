@@ -118,7 +118,7 @@
             <div class="product-card"><img src="sugarpink.jpeg" class="product-img"><h3 class="product-name">Sugar Pink</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦21,000</div><button onclick="addToCart(event, 'Sugar Pink', 21000)" class="icon-btn">Add to Cart</button></div>
             <div class="product-card"><img src="mousuf.jpeg" class="product-img"><h3 class="product-name">Mousuf Brown</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦20,000</div><button onclick="addToCart(event, 'Mousuf Brown', 20000)" class="icon-btn">Add to Cart</button></div>
             <div class="product-card"><img src="lamsat.jpeg" class="product-img"><h3 class="product-name">Lamsat Harir</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Lamsat Harir', 18000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lamsatgold.jpeg" class="product-img"><h3 class="product-name">Lamsat Gold</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Lamsat Gold', 18000)" class="icon-btn">Add to Cart</button></div>
+            <div class="product-card"><img src="lamsatgold.jpeg" class="product-img"><h3 class="product-name">Lamsat Gold</h3><div class="product-sub">by Arabiyat</div><div class="product-price", ₦18,000</div><button onclick="addToCart(event, 'Lamsat Gold', 18000)" class="icon-btn">Add to Cart</button></div>
             <div class="product-card"><img src="oudlayl.jpeg" class="product-img"><h3 class="product-name">Oud Al Layl</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Oud Al Layl', 18000)" class="icon-btn">Add to Cart</button></div>
             <div class="product-card"><img src="veyes.jpeg" class="product-img"><h3 class="product-name">Veyes Gift Set</h3><div class="product-sub">Miniature Collection</div><div class="product-price">₦15,000</div><button onclick="addToCart(event, 'Veyes Gift Set', 15000)" class="icon-btn">Add to Cart</button></div>
 
@@ -133,7 +133,15 @@
 
     <div class="cart-float-btn" onclick="toggleCart()"><i class="fas fa-shopping-bag"></i><div class="cart-count" id="cartCount">0</div></div>
     <div class="modal-overlay" id="cartModal"><div class="modal-content"><span class="close-modal" onclick="toggleCart()">&times;</span><h2>Your Cart</h2><div id="cartItemsList" style="margin:20px 0;"></div><div class="total-row"><span>Total:</span><span id="cartTotalText">₦0</span></div><button onclick="checkoutWhatsApp()" style="background:#25D366; color:#fff; width:100%; padding:15px; border-radius:30px; border:none; font-weight:bold; margin-top:20px; cursor:pointer;">Order on WhatsApp</button></div></div>
-    <div class="modal-overlay" id="profileModal"><div class="modal-content"><span class="close-modal" onclick="openProfile()">&times;</span><h2>Profile</h2><input type="text" id="usernameInput" placeholder="Your Name" style="width:85%; padding:12px; margin:20px 0; background:#000; color:#fff; border:1px solid #333; border-radius:10px;"><button onclick="saveUserProfile()" style="padding:12px 40px; background:var(--gold-gradient); border:none; border-radius:50px; font-weight:bold; color:#000; cursor:pointer;">Save</button></div></div>
+    
+    <div class="modal-overlay" id="profileModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="openProfile()">&times;</span>
+            <h2>Profile</h2>
+            <div id="profileContent" style="margin-top: 20px;">
+                </div>
+        </div>
+    </div>
 
     <footer>
         <div class="footer-delivery"><i class="fas fa-map-marker-alt"></i><span>Lagos (Nationwide delivery)</span></div>
@@ -172,18 +180,41 @@
         }
 
         function toggleCart() { const m = document.getElementById('cartModal'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; }
-        function openProfile() { const p = document.getElementById('profileModal'); p.style.display = p.style.display === 'flex' ? 'none' : 'flex'; }
-        
-        // --- SURGICAL PROFILE FIX ---
+
+        // --- SURGICAL PROFILE LOGIC FIX ---
+        function openProfile() { 
+            const p = document.getElementById('profileModal'); 
+            p.style.display = p.style.display === 'flex' ? 'none' : 'flex';
+            if (p.style.display === 'flex') { updateProfileUI(); }
+        }
+
+        function updateProfileUI() {
+            const container = document.getElementById('profileContent');
+            const name = localStorage.getItem('scentauraUser');
+            if (name) {
+                container.innerHTML = `
+                    <p style="margin-bottom: 20px; font-size: 1.1rem;">Logged in as: <b class="gold-text">${name}</b></p>
+                    <button onclick="logout()" style="padding:12px; background:rgba(255,0,0,0.1); border:1px solid red; border-radius:50px; font-weight:bold; color:red; cursor:pointer; width:100%;">Logout</button>
+                `;
+            } else {
+                container.innerHTML = `
+                    <input type="text" id="usernameInput" placeholder="Your Name" style="width:90%; padding:12px; margin-bottom:20px; background:#000; color:#fff; border:1px solid #333; border-radius:10px;">
+                    <button onclick="saveUserProfile()" style="padding:12px; background:var(--gold-gradient); border:none; border-radius:50px; font-weight:bold; color:#000; cursor:pointer; width:100%;">Save Profile</button>
+                `;
+            }
+        }
+
         function saveUserProfile() { 
             const n = document.getElementById('usernameInput').value; 
-            const saveBtn = document.querySelector('#profileModal button');
             if(n) { 
                 localStorage.setItem('scentauraUser', n); 
-                saveBtn.innerText = "Saved! ✓";
-                saveBtn.style.background = "#25D366";
-                setTimeout(() => { location.reload(); }, 800);
+                location.reload(); 
             } 
+        }
+
+        function logout() {
+            localStorage.removeItem('scentauraUser');
+            location.reload();
         }
 
         window.onload = () => { 
@@ -212,4 +243,3 @@
     </script>
 </body>
 </html>
-
