@@ -28,22 +28,60 @@
         .header-search { background: rgba(0, 0, 0, 0.6); border: 1px solid #BF953F; border-radius: 40px; padding: 0 20px; color: #fff; width: 140px; height: 44px; outline: none; }
         .profile-btn { background: rgba(0,0,0,0.6); color: #BF953F; border: 1px solid #BF953F; width: 44px; height: 44px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; margin-right: 15px; }
 
-        .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('bg.jpg'), radial-gradient(circle at center, #222 0%, #000 100%); background-size: cover; background-position: center; position: relative; }
-        .hero-content { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); padding: 40px; border-radius: 40px; border: 1px solid rgba(255, 255, 255, 0.1); width: 88%; max-width: 500px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); opacity: 0; animation: smoothHero 1.5s forwards; }
+        /* --- UPDATED LUXURY HERO --- */
+        .hero { 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center; 
+            /* Replace 'lifestyle.jpg' with your actual image filename */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('lifestyle.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            position: relative; 
+        }
+        .hero-content { 
+            background: rgba(0, 0, 0, 0.4); 
+            backdrop-filter: blur(8px); 
+            padding: 50px 30px; 
+            border-radius: 40px; 
+            border: 1px solid rgba(191, 149, 63, 0.3); 
+            width: 88%; 
+            max-width: 500px; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8); 
+            opacity: 0; 
+            animation: smoothHero 1.5s forwards; 
+        }
         @keyframes smoothHero { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-        .logo-img { width: 180px; margin-bottom: 1.5rem; }
-        .hero p { font-family: 'Montserrat', sans-serif; font-size: 1.2rem; letter-spacing: 4px; margin-top: 8px; color: #e0e0e0; font-weight: 700; text-transform: uppercase; }
-        .cta-btn { margin-top: 30px; padding: 18px 50px; background: var(--gold-gradient); border: none; color: #000; font-family: 'Cinzel', serif; font-weight: 700; font-size: 1.1rem; border-radius: 50px; text-decoration: none; display: inline-block; }
+        .logo-img { width: 150px; margin-bottom: 1rem; border-radius: 50%; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; text-transform: none; color: #fff; margin: 15px 0 30px 0; letter-spacing: 1px; }
+        
+        .cta-btn { 
+            padding: 18px 50px; 
+            background: var(--gold-gradient); 
+            border: none; 
+            color: #000; 
+            font-weight: 700; 
+            font-size: 1.1rem; 
+            border-radius: 50px; 
+            text-decoration: none; 
+            display: inline-block; 
+            box-shadow: 0 10px 20px rgba(191, 149, 63, 0.3);
+            transition: 0.3s;
+        }
+        .cta-btn:hover { transform: scale(1.05); }
 
         .ticker-wrap { width: 100%; overflow: hidden; background: var(--gold-gradient); padding: 12px 0; white-space: nowrap; z-index: 50; }
         .ticker { display: inline-block; animation: marquee 25s linear infinite; }
         .ticker-item { display: inline-block; padding: 0 40px; font-size: 0.9rem; color: #000; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; }
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-        .collection { padding: 80px 20px; max-width: 1200px; margin: 0 auto; }
+        .collection { padding: 120px 20px 80px 20px; max-width: 1200px; margin: 0 auto; }
         .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
         
-        .product-card, .contact-card { 
+        .product-card { 
             background: var(--card-bg); border: 1px solid rgba(255, 255, 255, 0.1); padding: 25px; text-align: center; border-radius: 40px; 
             display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative;
             transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.3s ease;
@@ -67,15 +105,11 @@
 
         .cart-float-btn { position: fixed; bottom: 30px; right: 30px; background: var(--gold-gradient); width: 60px; height: 60px; border-radius: 50%; display: flex; justify-content: center; align-items: center; color: #000; z-index: 1000; cursor: pointer; }
         .cart-count { position: absolute; top: -5px; right: -5px; background: red; color: white; font-size: 0.8rem; width: 22px; height: 22px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-weight: bold; }
+        
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2100; justify-content: center; align-items: center; backdrop-filter: blur(10px); }
         .modal-content { background: #111; padding: 35px; border-radius: 40px; width: 85%; max-width: 320px; border: 1px solid #BF953F; text-align: center; position: relative; }
         .close-modal { position: absolute; top: -15px; right: -15px; background: var(--gold-gradient); color: #000; width: 44px; height: 44px; border-radius: 50%; display: flex; justify-content: center; align-items: center; cursor: pointer; font-weight: bold; }
         
-        .cart-item-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 10px; }
-        .qty-controls { display: flex; align-items: center; gap: 10px; }
-        .qty-btn { background: #333; color: #fff; border: none; width: 25px; height: 25px; border-radius: 5px; cursor: pointer; font-weight: bold; }
-        .total-row { font-weight: 700; font-size: 1.2rem; margin-top: 20px; color: #BF953F; border-top: 2px solid #BF953F; padding-top: 10px; display: flex; justify-content: space-between; }
-
         footer { text-align: center; padding: 80px 40px; border-top: 1px solid #222; margin-top: 50px; color: #888; font-size: 1rem; }
         .footer-delivery { display: flex; justify-content: center; align-items: center; gap: 12px; margin-bottom: 25px; color: #BF953F; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; }
     </style>
@@ -89,8 +123,9 @@
     <section class="hero">
         <div class="hero-content">
             <img src="brand.jpeg" class="logo-img">
-            <p id="welcome-msg">Your Aura. <span class="gold-text">Your Fragrance.</span></p>
-            <a href="#collection" class="cta-btn">View Collection</a>
+            <h1 class="gold-text" id="welcome-msg">Scentaura by B</h1>
+            <p class="hero-tagline">Luxury scents. Delivered with love.</p>
+            <a href="#collection" class="cta-btn">Discover Your Scent</a>
         </div>
     </section>
 
@@ -99,41 +134,12 @@
     <section id="collection" class="collection">
         <div class="product-grid" id="productGrid">
             <div class="product-card"><div class="luxury-badge">Luxury Scent</div><img src="supremacy.jpeg" class="product-img"><h3 class="product-name">Supremacy</h3><div class="product-sub">by Afnan</div><div class="product-price">₦90,000</div><button onclick="addToCart(event, 'Supremacy', 90000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><div class="luxury-badge">Luxury Scent</div><img src="9pmnight.jpeg" class="product-img"><h3 class="product-name">9pm Night Out</h3><div class="product-sub">by Afnan</div><div class="product-price">₦65,000</div><button onclick="addToCart(event, '9pm Night Out', 65000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="treasure.jpeg" class="product-img"><h3 class="product-name">Treasure Oak</h3><div class="product-sub">Woody Spicy</div><div class="product-price">₦60,000</div><button onclick="addToCart(event, 'Treasure Oak', 60000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="9pmelixir.jpeg" class="product-img"><h3 class="product-name">9pm Elixir</h3><div class="product-sub">by Afnan</div><div class="product-price">₦60,000</div><button onclick="addToCart(event, '9pm Elixir', 60000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="9pmrebel.jpeg" class="product-img"><h3 class="product-name">9pm Rebel</h3><div class="product-sub">by Afnan</div><div class="product-price">₦60,000</div><button onclick="addToCart(event, '9pm Rebel', 60000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="clubdenuit.jpeg" class="product-img"><h3 class="product-name">Club de Nuit</h3><div class="product-sub">by Armaf</div><div class="product-price">₦55,000</div><button onclick="addToCart(event, 'Club de Nuit', 55000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="confession.jpeg" class="product-img"><h3 class="product-name">Her Confession</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦52,000</div><button onclick="addToCart(event, 'Her Confession', 52000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="9pmblack.jpeg" class="product-img"><h3 class="product-name">9pm Black</h3><div class="product-sub">by Afnan</div><div class="product-price">₦50,000</div><button onclick="addToCart(event, '9pm Black', 50000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="giftset.jpeg" class="product-img"><h3 class="product-name">Lattafa Pride Set</h3><div class="product-sub">by Lattafa Pride</div><div class="product-price">₦50,000</div><button onclick="addToCart(event, 'Lattafa Gift Set', 50000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="nowcombo.jpeg" class="product-img"><h3 class="product-name">Now & Lamsat</h3><div class="product-sub">Combo Scent</div><div class="product-price">₦45,000</div><button onclick="addToCart(event, 'Now & Lamsat Combo', 45000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="vanilla.jpeg" class="product-img"><h3 class="product-name">Vanilla Voyage</h3><div class="product-sub">by Maison Asrar</div><div class="product-price">₦45,000</div><button onclick="addToCart(event, 'Vanilla Voyage', 45000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="badee.jpeg" class="product-img"><h3 class="product-name">Badee Al Oud</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦35,000</div><button onclick="addToCart(event, 'Badee Al Oud', 35000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="dirgham.jpeg" class="product-img"><h3 class="product-name">Al Dirgham</h3><div class="product-sub">Luxury Collection</div><div class="product-price">₦30,000</div><button onclick="addToCart(event, 'Al Dirgham', 30000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="fakhar.jpeg" class="product-img"><h3 class="product-name">Fakhar Plantin</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦30,000</div><button onclick="addToCart(event, 'Fakhar Plantin', 30000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="sensuous.jpeg" class="product-img"><h3 class="product-name">Sensuous Night</h3><div class="product-sub">by Khadlaj (100ml)</div><div class="product-price">₦30,000</div><button onclick="addToCart(event, 'Sensuous Night', 30000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="hayatti.jpeg" class="product-img"><h3 class="product-name">Hayatti Series</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦28,000</div><button onclick="addToCart(event, 'Hayatti Series', 28000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="qimmah.jpeg" class="product-img"><h3 class="product-name">Qimmah</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart(event, 'Qimmah', 25000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="ameeraloud.jpeg" class="product-img"><h3 class="product-name">Ameer Al Oud</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart(event, 'Ameer Al Oud', 25000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lail.jpeg" class="product-img"><h3 class="product-name">Lail Maleki</h3><div class="product-sub">by Lattafa</div><div class="product-price">₦25,000</div><button onclick="addToCart(event, 'Lail Maleki', 25000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="sugarpink.jpeg" class="product-img"><h3 class="product-name">Sugar Pink</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦21,000</div><button onclick="addToCart(event, 'Sugar Pink', 21000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="mousuf.jpeg" class="product-img"><h3 class="product-name">Mousuf Brown</h3><div class="product-sub">Classic Scent</div><div class="product-price">₦20,000</div><button onclick="addToCart(event, 'Mousuf Brown', 20000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lamsat.jpeg" class="product-img"><h3 class="product-name">Lamsat Harir</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Lamsat Harir', 18000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="lamsatgold.jpeg" class="product-img"><h3 class="product-name">Lamsat Gold</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Lamsat Gold', 18000)" class="icon-btn">Add to Cart</button></div>
-            <div class="product-card"><img src="oudlayl.jpeg" class="product-img"><h3 class="product-name">Oud Al Layl</h3><div class="product-sub">by Arabiyat</div><div class="product-price">₦18,000</div><button onclick="addToCart(event, 'Oud Al Layl', 18000)" class="icon-btn">Add to Cart</button></div>
             <div class="product-card"><img src="veyes.jpeg" class="product-img"><h3 class="product-name">Veyes Gift Set</h3><div class="product-sub">Miniature Collection</div><div class="product-price">₦15,000</div><button onclick="addToCart(event, 'Veyes Gift Set', 15000)" class="icon-btn">Add to Cart</button></div>
-
-            <div class="contact-card">
-                <h3>Want to see more?</h3>
-                <p>Explore our full exclusive catalog.</p>
-                <a href="https://instagram.com/scentaura_by_b" style="border: 1px solid #BF953F; color: #BF953F; padding: 12px 25px; border-radius: 30px; text-decoration: none; display: inline-block; margin-bottom: 20px; width: 80%;">Instagram</a>
-                <a href="https://wa.me/2347070717476" style="border: 1px solid #25D366; color: #25D366; padding: 12px 25px; border-radius: 30px; text-decoration: none; display: inline-block; width: 80%;">WhatsApp</a>
-            </div>
         </div>
     </section>
 
     <div class="cart-float-btn" onclick="toggleCart()"><i class="fas fa-shopping-bag"></i><div class="cart-count" id="cartCount">0</div></div>
+    
     <div class="modal-overlay" id="cartModal"><div class="modal-content"><span class="close-modal" onclick="toggleCart()">&times;</span><h2>Your Cart</h2><div id="cartItemsList" style="margin:20px 0;"></div><div class="total-row"><span>Total:</span><span id="cartTotalText">₦0</span></div><button onclick="checkoutWhatsApp()" style="background:#25D366; color:#fff; width:100%; padding:15px; border-radius:30px; border:none; font-weight:bold; margin-top:20px; cursor:pointer;">Order on WhatsApp</button></div></div>
     <div class="modal-overlay" id="profileModal"><div class="modal-content"><span class="close-modal" onclick="openProfile()">&times;</span><h2>Profile</h2><input type="text" id="usernameInput" placeholder="Your Name" style="width:85%; padding:12px; margin:20px 0; background:#000; color:#fff; border:1px solid #333; border-radius:10px;"><button onclick="saveUserProfile()" style="padding:12px 40px; background:var(--gold-gradient); border:none; border-radius:50px; font-weight:bold; color:#000; cursor:pointer;">Save</button></div></div>
 
@@ -151,7 +157,6 @@
             if (cart[name]) { cart[name].qty += 1; } else { cart[name] = { price: price, qty: 1 }; }
             updateCartDisplay();
             btn.classList.add('added');
-            const originalText = btn.innerText;
             btn.innerText = "Added! ✓";
             setTimeout(() => {
                 btn.classList.remove('added');
@@ -159,14 +164,12 @@
             }, 2000);
         }
 
-        function changeQty(name, delta) { if (cart[name]) { cart[name].qty += delta; if (cart[name].qty <= 0) delete cart[name]; updateCartDisplay(); } }
-
         function updateCartDisplay() {
             const list = document.getElementById('cartItemsList'), totalText = document.getElementById('cartTotalText');
             let total = 0, count = 0, html = "";
             for (let name in cart) {
                 let item = cart[name]; total += item.price * item.qty; count += item.qty;
-                html += `<div class="cart-item-row"><div style="text-align:left;"><b>${name}</b><br><small>₦${item.price.toLocaleString()}</small></div><div class="qty-controls"><button class="qty-btn" onclick="changeQty('${name}', -1)">-</button><span>${item.qty}</span><button class="qty-btn" onclick="changeQty('${name}', 1)">+</button></div></div>`;
+                html += `<div class="cart-item-row"><b>${name}</b><span>${item.qty}</span></div>`;
             }
             list.innerHTML = html || "Your cart is empty.";
             totalText.innerText = `₦${total.toLocaleString()}`;
@@ -175,33 +178,20 @@
 
         function toggleCart() { const m = document.getElementById('cartModal'); m.style.display = m.style.display === 'flex' ? 'none' : 'flex'; }
         function openProfile() { const p = document.getElementById('profileModal'); p.style.display = p.style.display === 'flex' ? 'none' : 'flex'; }
-        
-        // --- SURGICAL PROFILE FIX ---
+
         function saveUserProfile() { 
             const n = document.getElementById('usernameInput').value; 
-            const saveBtn = document.querySelector('#profileModal button');
-            if(n) { 
-                localStorage.setItem('scentauraUser', n); 
-                saveBtn.innerText = "Saved! ✓";
-                saveBtn.style.background = "#25D366";
-                setTimeout(() => { location.reload(); }, 800);
-            } 
+            if(n) { localStorage.setItem('scentauraUser', n); location.reload(); } 
         }
 
         window.onload = () => { 
             let n = localStorage.getItem('scentauraUser'); 
-            if(n) {
-                const msg = document.getElementById('welcome-msg');
-                if(msg) msg.innerHTML = `Welcome back, <span class="gold-text">${n}</span>`; 
-            }
+            if(n) document.getElementById('welcome-msg').innerHTML = `Welcome back, <span class="gold-text">${n}</span>`; 
         };
-        // ---------------------------
 
         function checkoutWhatsApp() { 
-            let items = [], total = 0;
-            for(let name in cart) { items.push(`${cart[name].qty}x ${name}`); total += cart[name].price * cart[name].qty; }
-            if(!items.length) return; 
-            window.open(`https://wa.me/${PHONE_NUMBER}?text=Hi, I want to order:%0A${items.join('%0A')}%0A%0A*Total: ₦${total.toLocaleString()}*`); 
+            let items = []; for(let name in cart) { items.push(`${cart[name].qty}x ${name}`); }
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=Order:%20${items.join(',%20')}`); 
         }
 
         function filterProducts() {
